@@ -84,6 +84,17 @@ stringData:
       mode: openshift-logging
 ----
 +
+If you have S3 with private (self-signed) CA cert, like ODF, you need to add
+the name of the config map containing CA certificate by adding the
+```spec.storage.tls``` entry:
++
+[source,yaml]
+----
+  storage:
+    tls:
+      caName: openshift-service-ca.crt
+----
++
 .. Apply the configuration:
 +
 [source,terminal]
